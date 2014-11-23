@@ -1,0 +1,116 @@
+<div class="modal-header">
+    <h3 class="modal-title" ng-if="!creating">{{ event.title }}</h3>
+    <h3 class="modal-title" ng-if="creating">New event</h3>
+</div>
+<div class="modal-body">
+    <form name="form">
+        <fieldset>
+            <div>
+                <p ng-if="!editing">{{ event.title }}</p>
+                <input ng-if="editing" type="text" class="form-control" placeholder="Name" maxlength="100" required ng-model="event.title">
+            </div>
+            <div>
+                <pre ng-if="!editing && event.description">{{ event.description }}</pre>
+                <textarea ng-if="editing" class="form-control" placeholder="Description" ng-model="event.description"></textarea>
+            </div>
+        </fieldset>
+        <hr>
+        <fieldset>
+            <div>
+                <p ng-if="!editing && event.location">{{ event.location }}</p>
+                <input ng-if="editing" class="form-control" type="text" placeholder="Location" maxlength="100" ng-model="event.location">
+            </div>
+            <div class="row">
+                <div class="col-xs-5">
+                    <span ng-if="!editing">
+                        {{ event.start|date:'shortTime' }}<br>
+                        {{ event.start|date:'fullDate' }}
+                    </span>
+                    <timepicker ng-if="editing" ng-model="event.start" ng-required="true"></timepicker>
+                    <input ng-if="editing" type="text" class="form-control" placeholder="Start date" datepicker-popup ng-model="event.start" ng-required="true" />
+                </div>
+                <div class="col-xs-2">
+                    <p ng-style="{ 'line-height': editing ? '102px' : null }">to</p>
+                </div>
+                <div class="col-xs-5">
+                    <span ng-if="!editing">
+                        {{ event.end|date:'shortTime' }}<br>
+                        {{ event.end|date:'fullDate' }}
+                    </span>
+                    <timepicker ng-if="editing" ng-model="event.end" ng-required="true"></timepicker>
+                    <input ng-if="editing" type="text" class="form-control" placeholder="End date" datepicker-popup ng-model="event.end" ng-required="true" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <hr>
+    <tabset ng-if="!creating">
+        <tab>
+            <tab-heading><span class="fa fa-paperclip"></span></tab-heading>
+
+            <h4>Files</h4>
+            <div>
+                <form class="form-inline" ng-if="event._permissions.update">
+                    <file-picker file="newFile"></file-picker>
+                    <button class="btn btn-sm btn-primary"
+                        ng-click="addFile(newFile.path); newFile = null"
+                        ng-disabled="!newFile">
+                    Add</button>
+                </form> 
+
+                <p ng-if="event.files.length == 0">There are no files associated with this event.</p>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="file in event.files">
+                        <a href ng-click="removeFile(file)" ng-if="event._permissions.update">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        <a href title="{{ file }}" ng-click="openFile(file)">{{ file|basename }}</a>
+                    </li>
+                </ul>
+            </div>
+        </tab>
+        <tab>
+            <tab-heading><span class="fa fa-users"></span></tab-heading>
+            <h4>Attendees</h4>
+
+            <form class="form-inline" ng-if="event._permissions.update">
+                <p>Add user</p>
+                <user-picker user="newAttendeeUser"></user-picker>
+                <button class="btn btn-sm btn-primary"
+                    ng-click="addAttendee(newAttendeeUser); newAttendeeUser = null"
+                    ng-disabled="!newAttendeeUser">
+                Add</button>
+            </form> 
+
+            <form class="form-inline" ng-if="event._permissions.update">
+                <p>Add task force</p>
+                <taskforce-picker taskforce="newAttendeeTaskforce"></taskforce-picker>
+                <button class="btn btn-sm btn-primary"
+                    ng-click="addAttendeeTaskforce(newAttendeeTaskforce); newAttendeeTaskforce = null"
+                    ng-disabled="!newAttendeeTaskforce">
+                Add</button>
+            </form> 
+            
+            <p ng-if="event.attendees.length == 0">No-one is attending this event.</p>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="user in event.attendees">
+                    <a href ng-click="removeAttendee(user)" ng-if="event._permissions.update">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <a ui-sref="users.detail({ userId: user.id })">{{ user.full_name }}</a>
+                </li>
+            </ul>
+        </tab>
+        <tab>
+            <tab-heading><span class="fa fa-comments"></span></tab-heading>
+            <comments-section thread-id="event.comment_thread"></comments-section>
+        </tab>
+    </tabset>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="edit()" ng-if="event._permissions.update && !editing">Edit</button>
+    <button class="btn btn-danger" ng-click="delete()" ng-if="event._permissions.delete && editing && !creating">Delete</button>
+    <button class="btn btn-primary" ng-click="update(form)" ng-disabled="form.$invalid || !form.$dirty" ng-if="editing && !creating">Save</button>
+    <button class="btn btn-primary" ng-click="create(form)" ng-disabled="form.$invalid" ng-if="creating">Create</button>
+    <button class="btn btn-warning" ng-click="close()">Close</button>
+</div>

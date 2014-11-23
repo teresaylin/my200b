@@ -1,0 +1,78 @@
+<h1>{{ task.name }}</h1>
+
+<div class="content-panel item-summary">
+    <table class="table"><tbody>
+        <tr>
+            <th>Owner</th>
+            <td>
+                <a ui-sref="users.detail({ userId: task.owner.id })">{{ task.owner.full_name }}</a>
+            </td>
+        </tr>
+        <tr>
+            <th>Due</th>
+            <td>{{ task.due_time|date:'medium' }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <pre>{{ task.description }}</pre>
+            </td>
+        </tr>
+        <tr ng-if="task.completed_by">
+            <th>Completed by</th>
+            <td>
+                <a ui-sref="users.detail({ userId: task.completed_by.id })">{{ task.completed_by.full_name }}</a>
+            </td>
+        </tr>
+        <tr>
+            <th>Assigned task forces</th>
+            <td>
+                <form class="form-inline">
+                    <taskforce-picker taskforce="newAssignedTaskforce"></taskforce-picker>
+                    <button class="btn btn-sm btn-primary"
+                        ng-click="addAssignedTaskforce(newAssignedTaskforce); newAssignedTaskforce = null"
+                        ng-disabled="!newAssignedTaskforce">
+                    Add</button>
+                </form> 
+
+                <p ng-if="task.assigned_taskforces.length == 0">There are no task forces assigned to this task.</p>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="taskforce in task.assigned_taskforces">
+                        <a href ng-click="removeAssignedTaskforce(taskforce)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        {{ taskforce.name }}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Assigned users</th>
+            <td>
+                <form class="form-inline">
+                    <user-picker user="newAssignedUser"></user-picker>
+                    <button class="btn btn-sm btn-primary"
+                        ng-click="addAssignedUser(newAssignedUser); newAssignedUser = null"
+                        ng-disabled="!newAssignedUser">
+                    Add</button>
+                </form> 
+
+                <p ng-if="task.assigned_users.length == 0">No-one is assigned to this task.</p>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="user in task.assigned_users">
+                        <a href ng-click="removeAssignedUser(user)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        <a ui-sref="users.detail({ userId: user.id })">{{ user.full_name }}</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Comments</th>
+            <td>
+                <comments-section thread-id="task.comment_thread"></comments-section>
+            </td>
+        </tr>
+    </tbody></table>
+</div>

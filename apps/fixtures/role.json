@@ -1,0 +1,93 @@
+[
+{
+  "pk": 1,
+  "model": "users.role",
+  "fields": {
+    "name": "System Integrator"
+  }
+},
+{
+  "pk": 2,
+  "model": "users.role",
+  "fields": {
+    "name": "Financial Officer"
+  }
+},
+{
+  "pk": 3,
+  "model": "users.role",
+  "fields": {
+    "name": "Tool Officer"
+  }
+},
+{
+  "pk": 4,
+  "model": "users.role",
+  "fields": {
+    "name": "Information Officer"
+  }
+},
+{
+  "pk": 5,
+  "model": "users.role",
+  "fields": {
+    "name": "Team Site Officer"
+  }
+},
+{
+  "pk": 6,
+  "model": "users.role",
+  "fields": {
+    "name": "Safety Officer"
+  }
+},
+{
+  "pk": 7,
+  "model": "users.role",
+  "fields": {
+    "name": "Student"
+  }
+},
+{
+  "pk": 8,
+  "model": "users.role",
+  "fields": {
+    "name": "Mentor"
+  }
+},
+{
+  "pk": 9,
+  "model": "users.role",
+  "fields": {
+    "name": "Lab Instructor"
+  }
+},
+{
+  "pk": 10,
+  "model": "users.role",
+  "fields": {
+    "name": "Communications Instructor"
+  }
+},
+{
+  "pk": 11,
+  "model": "users.role",
+  "fields": {
+    "name": "TA"
+  }
+},
+{
+  "pk": 12,
+  "model": "users.role",
+  "fields": {
+    "name": "Staff"
+  }
+},
+{
+  "pk": 13,
+  "model": "users.role",
+  "fields": {
+    "name": "Developer"
+  }
+}
+]

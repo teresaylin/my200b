@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h3 class="modal-title">Complete task</h3>
+</div>
+<div class="modal-body">
+    <p>Mark task <strong>{{ task.name }}</strong> as completed?</p>
+    <p class="alert alert-warning"><strong>Warning</strong>: Completing this task will mark all subtasks as complete.</p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">Complete</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

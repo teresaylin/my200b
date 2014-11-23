@@ -1,0 +1,74 @@
+[
+{
+  "model": "users.team",
+  "fields": {
+    "color": "Red",
+    "team_email": "2009red@mit.edu"
+  },
+  "pk": 1
+},
+
+{
+  "model": "users.team",
+  "fields": {
+    "color": "Orange",
+    "team_email": "2009orange@mit.edu"
+  },
+  "pk": 2
+},
+
+{
+  "model": "users.team",
+  "fields": {
+    "color": "Yellow",
+    "team_email": "2009yellow@mit.edu"
+  },
+  "pk": 3
+},
+
+{
+  "model": "users.team",
+  "fields": {
+    "color": "Green",
+    "team_email": "2009green@mit.edu"
+  },
+  "pk": 4
+},
+
+{
+  "model": "users.team",
+  "fields": {
+    "color": "Blue",
+    "team_email": "2009blue@mit.edu"
+  },
+  "pk": 5
+},
+
+{
+  "model": "users.team",
+  "fields": {
+    "color": "Purple",
+    "team_email": "2009purple@mit.edu"
+  },
+  "pk": 6
+},
+
+{
+  "model": "users.team",
+  "fields": {
+    "color": "Pink",
+    "team_email": "2009pink@mit.edu"
+  },
+  "pk": 7
+},
+
+{
+  "model": "users.team",
+  "fields": {
+    "color": "Silver",
+    "team_email": "2009silver@mit.edu"
+  },
+  "pk": 8
+}
+
+]

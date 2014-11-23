@@ -1,0 +1,15 @@
+<h1>Tasks</h1>
+<hr>
+
+<div class="row mt">
+    <div class="col-md-6">
+        <task-list filter-user="navUser" filter-taskforce="navTaskforce"></task-list>
+    </div>
+    <div class="col-md-6">
+        <task-list filter-user="currentUser"></task-list>
+    </div>
+</div>
+
+<div class="add-task-row">
+    <button class="btn btn-success btn-sm pull-left" ng-click="newTask()">New task</button>
+</div>

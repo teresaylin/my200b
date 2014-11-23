@@ -1,0 +1,30 @@
+{% extends 'webapp/page.html' %}
+
+{% block pageTitle %} &raquo; Login{% endblock %}
+
+{% block pageContent %}
+<div id="login-page">
+    <div class="container">
+        <form class="form-login" action="{{ request.path }}" method="post">{% csrf_token %}
+        	<input type="hidden" name="next" value="{{ next }}" />
+            <h2 class="form-login-heading">Sign in</h2>
+            <div class="login-wrap">
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        Invalid username or password.
+                    </div>
+                {% endif %}
+                <input id="id_username" maxlength="254" name="username" type="text" class="form-control" placeholder="User ID" autofocus>
+                <br>
+                <input id="id_password" name="password" type="password" class="form-control" placeholder="Password">
+                <label class="checkbox">
+                    <span class="pull-right">
+                        <a href="{% url 'webapp:forgot-password' %}">Forgot your password?</a>
+                    </span>
+                </label>
+                <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> Sign in</button>
+            </div>
+        </form>	  	
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,240 @@
+{% extends 'webapp/page.html' %}
+
+{% load staticfiles %}
+
+{% block htmlAttr %} ng-app="app"{% endblock %}
+{% block bodyAttr %} ng-controller="AppCtrl"{% endblock %}
+
+{% block pageScriptHead %}
+    <script src="{% static 'js/app/events.js' %}"></script>
+    <script src="{% static 'js/app/files.js' %}"></script>
+    <script src="{% static 'js/app/navfilter.js' %}"></script>
+    <script src="{% static 'js/app/repositories.js' %}"></script>
+    <script src="{% static 'js/app/tasks.js' %}"></script>
+    <script src="{% static 'js/app/users.js' %}"></script>
+
+    <script src="{% static 'js/app/app.js' %}"></script>
+{% endblock %}
+
+{% block pageContent %}
+<section id="container">
+    <!-- Top bar -->
+    {% verbatim %}<header class="header black-bg" ng-class="'team-'+activeTeam.color|lowercase" ng-controller="NavFilterCtrl">{% endverbatim %}
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars" tooltip="Toggle navigation" tooltip-placement="right" ng-click="toggleSidebar()"></div>
+        </div>
+        <!-- Logo -->
+        <a ui-sref="dashboard" class="logo"><b>my2009</b></a>
+        
+        <!-- Nav Filter -->
+        {% verbatim %}
+        <div class="nav-filter">
+            <span class="dropdown">
+                <a href class="dropdown-toggle">{{ activeTeam.color }}</a>
+                <ul class="dropdown-menu" ng-visible="teamSelectOpen">
+                    <li ng-repeat="team in teams">
+                        <a href ng-click="selectTeam(team)">{{ team.color }}</a>
+                    </li>
+                </ul>
+            </span>
+            &raquo;
+            <span class="dropdown">
+                <a href class="dropdown-toggle">
+                    <span ng-if="activeUser">{{ activeUser.full_name }}</span>
+                    <span ng-if="taskforces.length > 1">{{ taskforces[0].active.name }}</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Users</li>
+                    <li ng-repeat="user in users">
+                        <a href ng-click="selectUser(user)">{{ user.full_name }}</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Task forces</li>
+                    <li ng-repeat="taskforce in taskforces[0].list">
+                        <a href ng-click="selectTaskforce(taskforce, 0)">{{ taskforce.name }}</a>
+                    </li>
+                </ul>
+            </span>
+            <span ng-repeat="level in taskforces" ng-if="!$first && level.list.length > 0">
+                &raquo;
+                <span class="dropdown">
+                    <a href class="dropdown-toggle">
+                        <span ng-if="level.active">{{ level.active.name }}</span>
+                        <span ng-if="!level.active">...</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="taskforce in level.list">
+                            <a href ng-click="selectTaskforce(taskforce, level.idx)">{{ taskforce.name }}</a>
+                        </li>
+                    </ul>
+                </span>
+            </span>
+        </div>
+        {% endverbatim %}
+
+        <!-- Logout -->
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li><a class="logout" ui-sref="settings">
+                	<span class="fa fa-cog"></span> Settings
+                </a></li>
+                <li><a class="logout" href="{% url 'webapp:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Sidebar -->
+    <aside>
+        <div id="sidebar" class="nav-collapse" ng-show="showSidebar">
+            <ul class="sidebar-menu list-unstyled" id="nav-accordion">
+                <p class="centered">
+                    <a ui-sref="users.detail({userId:currentUser.id})">
+                        <img class="img-circle" user-picture="currentUser" size="small">
+                    </a>
+                </p>
+
+                <h5 class="centered">{% verbatim %}{{ currentUser.full_name }}{% endverbatim %}</h5>
+                  
+                <li class="mt">
+                    <a ui-sref="dashboard">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="tasks">
+                        <i class="fa fa-tasks"></i>
+                        <span>Tasks</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="team">
+                        <i class="fa fa-users"></i>
+                        <span>Team</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="events">
+                        <i class="fa fa-calendar"></i>
+                        <span>Events</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="files">
+                        <i class="fa fa-folder"></i>
+                        <span>Files</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    
+    <!-- Main -->
+    <section id="main-content" ng-class="{ nomargin: !showSidebar }">
+        <section ui-view class="wrapper">
+        </section>
+    </section>
+</section>
+
+<!-- Misc templates -->
+
+{% verbatim %}
+<script type="text/ng-template" id="error-dialog.html">
+    <div class="error-dialog">
+        <div class="modal-header">
+            <h3 class="modal-title">Error</h3>
+        </div>
+        <div class="modal-body">
+            <p class="alert alert-danger">{{ errorText }}</p>
+            <pre ng-if="errorDetail">{{ errorDetail }}</pre>
+            <iframe ng-srcdoc="errorDetailHtml" ng-if="errorDetailHtml"></iframe>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="close()">Close</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="components/user-picker.html">
+    <div class="form-group" ng-class="{ 'has-success': user }">
+        <input type="text" ng-model="user"
+            typeahead="user as user.full_name for user in search($viewValue) | filter:{full_name:$viewValue}"
+            typeahead-min-length="2"
+            typeahead-editable="false" 
+            class="form-control">
+    </div>
+</script>
+
+<script type="text/ng-template" id="components/taskforce-picker.html">
+    <div class="form-group" ng-class="{ 'has-success': taskforce }">
+        <input type="text" ng-model="taskforce"
+            typeahead="taskforce as taskforce.name for taskforce in search($viewValue) | filter:{name:$viewValue}"
+            typeahead-min-length="2"
+            typeahead-editable="false" 
+            class="form-control">
+    </div>
+</script>
+
+<script type="text/ng-template" id="components/time-from-now.html">
+    <time datetime="{{ isoTime }}" title="{{ time|date:'medium' }}">{{ fromNow }}</time>
+</script>
+
+<script type="text/ng-template" id="components/comments-section.html">
+    <form>
+        <textarea class="form-control" type="text" ng-model="newCommentBody"></textarea>
+        <button class="btn btn-sm btn-primary"
+            ng-click="postComment(newCommentBody); newCommentBody = ''"
+            ng-disabled="!newCommentBody">
+        Post</button>
+    </form>
+
+    <div class="comment clearfix" ng-repeat="comment in comments">
+        <figure>
+            <img user-picture="comment.user" size="small">
+        </figure>
+        <div>
+            <div>
+                <a ui-sref="users.detail({ userId: comment.user.id })">{{ comment.user.full_name }}</a>
+                <span class="text-muted">&bull;
+                    <time-from-now time="comment.time"></time-from-now>
+                </span>
+            </div>
+            <div class="body">{{ comment.body }}</div>
+        </div>
+    </div>
+
+    <a href ng-click="more()" ng-hide="!nextPageUrl">More...</a>
+</script>
+
+<script type="text/ng-template" id="events/calendar.html">
+    <div class="content-panel" ng-controller="CalendarCtrl">
+        <div class="panel-body">
+            <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources" calendar="calendar"></div> 
+            <div class="mt">
+                <button class="btn btn-sm btn-success" ng-click="newEvent()">New event</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="components/path-breadcrumbs.html">
+    <span ng-repeat="name in fragments">
+        <a href ng-if="!$last" ng-click="fragmentClicked($index)">{{ name }}</a>
+        <span ng-if="$last">{{ name }}</span>
+        <span ng-if="!$last"><span class="fa fa-angle-right"></span></span>
+    </span>
+</script>
+
+<script type="text/ng-template" id="components/file-picker.html">
+    <div class="form-group" ng-class="{ 'has-success': file }">
+        <input type="text" ng-model="file"
+            typeahead="file as file.path for file in search($viewValue) | filter:{path:$viewValue}"
+            typeahead-min-length="2"
+            typeahead-editable="false" 
+            class="form-control">
+    </div>
+</script>
+
+{% endverbatim %}
+
+{% endblock %}

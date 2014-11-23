@@ -1,0 +1,11 @@
+.project
+.pydevproject
+__pycache__
+*.pyc
+*.swp
+.sass-cache
+
+db.sqlite3
+staticfiles
+apps/users/fixtures/*
+apps/webapp/static/img/profile-photos/*

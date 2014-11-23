@@ -1,0 +1,1932 @@
+[
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "100",
+    "team": "5"
+  },
+  "pk": 1  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "101",
+    "team": "5"
+  },
+  "pk": 2  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "102",
+    "team": "5"
+  },
+  "pk": 3  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "103",
+    "team": "5"
+  },
+  "pk": 4  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "104",
+    "team": "5"
+  },
+  "pk": 5  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "105",
+    "team": "5"
+  },
+  "pk": 6  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "106",
+    "team": "5"
+  },
+  "pk": 7  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "107",
+    "team": "5"
+  },
+  "pk": 8  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "108",
+    "team": "5"
+  },
+  "pk": 9  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "109",
+    "team": "5"
+  },
+  "pk": 10  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "110",
+    "team": "5"
+  },
+  "pk": 11  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "111",
+    "team": "5"
+  },
+  "pk": 12  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "112",
+    "team": "5"
+  },
+  "pk": 13  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "113",
+    "team": "5"
+  },
+  "pk": 14  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "114",
+    "team": "5"
+  },
+  "pk": 15  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "115",
+    "team": "5"
+  },
+  "pk": 16  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "116",
+    "team": "5"
+  },
+  "pk": 17  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "117",
+    "team": "5"
+  },
+  "pk": 18  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "118",
+    "team": "5"
+  },
+  "pk": 19  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "119",
+    "team": "5"
+  },
+  "pk": 20  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "120",
+    "team": "5"
+  },
+  "pk": 21  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "121",
+    "team": "5"
+  },
+  "pk": 22  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "122",
+    "team": "5"
+  },
+  "pk": 23  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "123",
+    "team": "5"
+  },
+  "pk": 24  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "124",
+    "team": "4"
+  },
+  "pk": 25  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "125",
+    "team": "4"
+  },
+  "pk": 26  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "126",
+    "team": "4"
+  },
+  "pk": 27  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "127",
+    "team": "4"
+  },
+  "pk": 28  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "128",
+    "team": "4"
+  },
+  "pk": 29  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "129",
+    "team": "4"
+  },
+  "pk": 30  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "130",
+    "team": "4"
+  },
+  "pk": 31  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "131",
+    "team": "4"
+  },
+  "pk": 32  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "132",
+    "team": "4"
+  },
+  "pk": 33  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "133",
+    "team": "4"
+  },
+  "pk": 34  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "134",
+    "team": "4"
+  },
+  "pk": 35  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "135",
+    "team": "4"
+  },
+  "pk": 36  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "136",
+    "team": "4"
+  },
+  "pk": 37  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "137",
+    "team": "4"
+  },
+  "pk": 38  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "138",
+    "team": "4"
+  },
+  "pk": 39  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "139",
+    "team": "4"
+  },
+  "pk": 40  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "140",
+    "team": "4"
+  },
+  "pk": 41  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "141",
+    "team": "4"
+  },
+  "pk": 42  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "142",
+    "team": "4"
+  },
+  "pk": 43  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "143",
+    "team": "4"
+  },
+  "pk": 44  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "144",
+    "team": "4"
+  },
+  "pk": 45  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "145",
+    "team": "4"
+  },
+  "pk": 46  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "146",
+    "team": "4"
+  },
+  "pk": 47  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "147",
+    "team": "4"
+  },
+  "pk": 48  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "148",
+    "team": "2"
+  },
+  "pk": 49  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "149",
+    "team": "2"
+  },
+  "pk": 50  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "150",
+    "team": "2"
+  },
+  "pk": 51  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "151",
+    "team": "2"
+  },
+  "pk": 52  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "152",
+    "team": "2"
+  },
+  "pk": 53  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "153",
+    "team": "2"
+  },
+  "pk": 54  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "154",
+    "team": "2"
+  },
+  "pk": 55  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "155",
+    "team": "2"
+  },
+  "pk": 56  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "156",
+    "team": "2"
+  },
+  "pk": 57  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "157",
+    "team": "2"
+  },
+  "pk": 58  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "158",
+    "team": "2"
+  },
+  "pk": 59  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "159",
+    "team": "2"
+  },
+  "pk": 60  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "160",
+    "team": "2"
+  },
+  "pk": 61  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "161",
+    "team": "2"
+  },
+  "pk": 62  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "162",
+    "team": "2"
+  },
+  "pk": 63  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "163",
+    "team": "2"
+  },
+  "pk": 64  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "164",
+    "team": "2"
+  },
+  "pk": 65  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "165",
+    "team": "2"
+  },
+  "pk": 66  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "166",
+    "team": "2"
+  },
+  "pk": 67  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "167",
+    "team": "2"
+  },
+  "pk": 68  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "168",
+    "team": "2"
+  },
+  "pk": 69  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "169",
+    "team": "2"
+  },
+  "pk": 70  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "170",
+    "team": "2"
+  },
+  "pk": 71  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "171",
+    "team": "2"
+  },
+  "pk": 72  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "172",
+    "team": "2"
+  },
+  "pk": 73  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "173",
+    "team": "7"
+  },
+  "pk": 74  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "174",
+    "team": "7"
+  },
+  "pk": 75  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "175",
+    "team": "7"
+  },
+  "pk": 76  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "176",
+    "team": "7"
+  },
+  "pk": 77  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "177",
+    "team": "7"
+  },
+  "pk": 78  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "178",
+    "team": "7"
+  },
+  "pk": 79  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "179",
+    "team": "7"
+  },
+  "pk": 80  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "180",
+    "team": "7"
+  },
+  "pk": 81  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "181",
+    "team": "7"
+  },
+  "pk": 82  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "182",
+    "team": "7"
+  },
+  "pk": 83  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "183",
+    "team": "7"
+  },
+  "pk": 84  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "184",
+    "team": "7"
+  },
+  "pk": 85  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "185",
+    "team": "7"
+  },
+  "pk": 86  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "186",
+    "team": "7"
+  },
+  "pk": 87  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "187",
+    "team": "7"
+  },
+  "pk": 88  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "188",
+    "team": "7"
+  },
+  "pk": 89  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "189",
+    "team": "7"
+  },
+  "pk": 90  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "190",
+    "team": "7"
+  },
+  "pk": 91  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "191",
+    "team": "7"
+  },
+  "pk": 92  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "192",
+    "team": "7"
+  },
+  "pk": 93  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "193",
+    "team": "7"
+  },
+  "pk": 94  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "194",
+    "team": "7"
+  },
+  "pk": 95  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "195",
+    "team": "7"
+  },
+  "pk": 96  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "196",
+    "team": "7"
+  },
+  "pk": 97  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "197",
+    "team": "6"
+  },
+  "pk": 98  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "198",
+    "team": "6"
+  },
+  "pk": 99  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "199",
+    "team": "6"
+  },
+  "pk": 100  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "200",
+    "team": "6"
+  },
+  "pk": 101  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "201",
+    "team": "6"
+  },
+  "pk": 102  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "202",
+    "team": "6"
+  },
+  "pk": 103  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "203",
+    "team": "6"
+  },
+  "pk": 104  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "204",
+    "team": "6"
+  },
+  "pk": 105  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "205",
+    "team": "6"
+  },
+  "pk": 106  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "206",
+    "team": "6"
+  },
+  "pk": 107  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "207",
+    "team": "6"
+  },
+  "pk": 108  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "208",
+    "team": "6"
+  },
+  "pk": 109  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "209",
+    "team": "6"
+  },
+  "pk": 110  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "210",
+    "team": "6"
+  },
+  "pk": 111  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "211",
+    "team": "6"
+  },
+  "pk": 112  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "212",
+    "team": "6"
+  },
+  "pk": 113  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "213",
+    "team": "6"
+  },
+  "pk": 114  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "214",
+    "team": "6"
+  },
+  "pk": 115  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "215",
+    "team": "6"
+  },
+  "pk": 116  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "216",
+    "team": "6"
+  },
+  "pk": 117  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "217",
+    "team": "6"
+  },
+  "pk": 118  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "218",
+    "team": "6"
+  },
+  "pk": 119  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "219",
+    "team": "6"
+  },
+  "pk": 120  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "220",
+    "team": "6"
+  },
+  "pk": 121  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "221",
+    "team": "6"
+  },
+  "pk": 122  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "222",
+    "team": "1"
+  },
+  "pk": 123  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "223",
+    "team": "1"
+  },
+  "pk": 124  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "224",
+    "team": "1"
+  },
+  "pk": 125  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "225",
+    "team": "1"
+  },
+  "pk": 126  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "226",
+    "team": "1"
+  },
+  "pk": 127  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "227",
+    "team": "1"
+  },
+  "pk": 128  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "228",
+    "team": "1"
+  },
+  "pk": 129  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "229",
+    "team": "1"
+  },
+  "pk": 130  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "230",
+    "team": "1"
+  },
+  "pk": 131  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "231",
+    "team": "1"
+  },
+  "pk": 132  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "232",
+    "team": "1"
+  },
+  "pk": 133  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "233",
+    "team": "1"
+  },
+  "pk": 134  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "234",
+    "team": "1"
+  },
+  "pk": 135  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "235",
+    "team": "1"
+  },
+  "pk": 136  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "236",
+    "team": "1"
+  },
+  "pk": 137  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "237",
+    "team": "1"
+  },
+  "pk": 138  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "238",
+    "team": "1"
+  },
+  "pk": 139  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "239",
+    "team": "1"
+  },
+  "pk": 140  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "240",
+    "team": "1"
+  },
+  "pk": 141  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "241",
+    "team": "1"
+  },
+  "pk": 142  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "242",
+    "team": "1"
+  },
+  "pk": 143  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "243",
+    "team": "1"
+  },
+  "pk": 144  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "244",
+    "team": "1"
+  },
+  "pk": 145  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "245",
+    "team": "1"
+  },
+  "pk": 146  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "246",
+    "team": "1"
+  },
+  "pk": 147  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "247",
+    "team": "8"
+  },
+  "pk": 148  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "248",
+    "team": "8"
+  },
+  "pk": 149  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "249",
+    "team": "8"
+  },
+  "pk": 150  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "250",
+    "team": "8"
+  },
+  "pk": 151  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "251",
+    "team": "8"
+  },
+  "pk": 152  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "252",
+    "team": "8"
+  },
+  "pk": 153  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "253",
+    "team": "8"
+  },
+  "pk": 154  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "254",
+    "team": "8"
+  },
+  "pk": 155  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "255",
+    "team": "8"
+  },
+  "pk": 156  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "256",
+    "team": "8"
+  },
+  "pk": 157  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "257",
+    "team": "8"
+  },
+  "pk": 158  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "258",
+    "team": "8"
+  },
+  "pk": 159  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "259",
+    "team": "8"
+  },
+  "pk": 160  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "260",
+    "team": "8"
+  },
+  "pk": 161  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "261",
+    "team": "8"
+  },
+  "pk": 162  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "262",
+    "team": "8"
+  },
+  "pk": 163  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "263",
+    "team": "8"
+  },
+  "pk": 164  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "264",
+    "team": "8"
+  },
+  "pk": 165  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "265",
+    "team": "8"
+  },
+  "pk": 166  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "266",
+    "team": "8"
+  },
+  "pk": 167  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "267",
+    "team": "8"
+  },
+  "pk": 168  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "268",
+    "team": "8"
+  },
+  "pk": 169  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "269",
+    "team": "3"
+  },
+  "pk": 170  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "270",
+    "team": "3"
+  },
+  "pk": 171  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "271",
+    "team": "3"
+  },
+  "pk": 172  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "272",
+    "team": "3"
+  },
+  "pk": 173  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "273",
+    "team": "3"
+  },
+  "pk": 174  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "274",
+    "team": "3"
+  },
+  "pk": 175  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "275",
+    "team": "3"
+  },
+  "pk": 176  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "276",
+    "team": "3"
+  },
+  "pk": 177  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "277",
+    "team": "3"
+  },
+  "pk": 178  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "278",
+    "team": "3"
+  },
+  "pk": 179  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "279",
+    "team": "3"
+  },
+  "pk": 180  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "A",
+    "user": "280",
+    "team": "3"
+  },
+  "pk": 181  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "281",
+    "team": "3"
+  },
+  "pk": 182  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "282",
+    "team": "3"
+  },
+  "pk": 183  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "283",
+    "team": "3"
+  },
+  "pk": 184  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "284",
+    "team": "3"
+  },
+  "pk": 185  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "285",
+    "team": "3"
+  },
+  "pk": 186  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "286",
+    "team": "3"
+  },
+  "pk": 187  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "287",
+    "team": "3"
+  },
+  "pk": 188  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "288",
+    "team": "3"
+  },
+  "pk": 189  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "289",
+    "team": "3"
+  },
+  "pk": 190  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "290",
+    "team": "3"
+  },
+  "pk": 191  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "291",
+    "team": "3"
+  },
+  "pk": 192  
+},
+
+{
+  "model": "users.userteammapping",
+  "fields": {
+    "section": "B",
+    "user": "292",
+    "team": "3"
+  },
+  "pk": 193  
+}
+
+]

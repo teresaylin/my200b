@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h3 class="modal-title">Create folder</h3>
+</div>
+<div class="modal-body">
+    <form name="form">
+    	<div class="form-group" ng-class="{'has-error': form.name.$invalid && form.name.$dirty}">
+            <label class="control-label" for="files-create-folder-dialog-name">Folder name</label>
+	    	<input id="files-create-folder-dialog-name" type="text" name="name" maxlength="255" class="form-control"
+	    		ng-model="form.nameValue" ng-change="nameChanged(form)" filename required>
+	    	<p class="alert alert-danger" ng-if="form.$error.invalidName">Invalid file name or file already exists</p>
+		</div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="create(form)" ng-disabled="form.$invalid">Create folder</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

@@ -1,0 +1,77 @@
+<h1>Files</h1>
+<hr>
+
+<div class="row">
+	<div class="col-lg-12">
+	    <div class="content-panel">
+	        <div class="panel-body">
+                <div class="filebrowser" ng-controller="FileBrowserCtrl" ng-click="clearSelection()">
+                    <div class="filebrowser-header h4">
+                        <div class="filebrowser-header-right pull-right">
+                            <div class="filebrowser-search">
+                                <span class="text-muted"><span class="fa fa-search"></span></span>
+                                <input type="text" class="form-control input-sm" placeholder="Search" ng-model="nameSearch">
+                            </div>
+                            <span class="filebrowser-header-buttons">
+                                <a href ng-click="refresh()" ng-show="directory" tooltip="Refresh">
+                                    <span class="fa fa-refresh"></span>
+                                </a>
+                                <a href ng-click="openUploadDialog()" ng-show="directory" tooltip="Upload">
+                                    <span class="fa fa-arrow-circle-o-up"></span>
+                                </a>
+                                <a href ng-click="openCreateFolderDialog()" ng-show="directory" tooltip="New folder">
+                                    <span class="fa fa-folder"></span>
+                                </a>
+                            </span>
+                        </div>
+                        <div>
+                            <a class="dropbox-logo" href="https://www.dropbox.com/home{{ directory.path }}" target="_blank" tooltip="Open in Dropbox">
+                                <span class="fa fa-dropbox"></span>
+                            </a>
+                            <path-breadcrumbs path="directory.path" path-change="setDirectory(path)"></path-breadcrumbs>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="filebrowser-files">
+                        <div ng-show="selectionLength > 0" ng-click="$event.stopPropagation()">
+                            {{ selectionLength }} {{ selectionLength == 1 ? 'item' : 'items' }} selected.
+                            <a href ng-click="deleteSelection()">
+                                <span class="fa fa-trash-o"></span>
+                                Delete...
+                            </a>
+                        </div>
+                        <table ng-if="directory && directory.contents.length > 0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Modified</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="filebrowser-file" ng-repeat="file in directory.contents|filter:{name: nameSearch}|orderBy:fileOrder"
+                                    ng-class="{ selected: selection[file.path], pending: !file.app_data && !file.is_dir }"
+                                    ng-click="selectFile(file, $event.ctrlKey); $event.stopPropagation()"
+                                >
+                                    <td>
+                                        <a href ng-click="openFile(file); $event.stopPropagation();" class="filebrowser-file-icon">
+                                            <img file-thumbnail="file" size="xs" width="32">
+                                        </a>
+                                        <a href ng-click="openFile(file); $event.stopPropagation()">{{ file.name }}</a>
+                                    </td>
+                                    <td>
+                                        <time-from-now ng-if="!file.is_dir" time="file.modified" time-format="rfc2822"></time-from-now>
+                                        <span ng-if="file.is_dir">--</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p ng-if="directory && directory.contents.length == 0">
+                            This folder is empty.
+                        </p>
+                    </div>
+                </div>
+            </div>
+         </div>
+     </div>
+</div>

@@ -1,0 +1,63 @@
+<script type="text/ng-template" id="task-list-task.html">
+    <div class="task-header" ng-init="isOpen = task.subtasks.length > 0">
+        <div class="task-header-right pull-right">
+            <em task-assignees="task"></em>
+        </div>
+        <div class="task-header-left">
+            <span class="task-header-checkbox">
+                <!--
+                <input type="checkbox" class="list-child" ng-model="completed" ng-change="onCompletedChange(task, completed)"
+                ng-if="task.state != 'completed' && task._permissions.update">
+                -->
+                <a href class="app-checkbox" ng-class="{disabled: !task._permissions.update}" ng-click="task._permissions.update && completeTask(task)">
+                    <span class="app-checkbox-glyph-unchecked fa fa-square-o"></span>
+                    <span class="app-checkbox-glyph-checked fa fa-check-square-o"></span>
+                </a>
+            </span>
+            <a href ng-click="isOpen = !isOpen; toggleTask(task, isOpen)">
+                <span class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}"></span>
+            </a>
+            <span class="task-title-sp">
+                <a href ng-click="openTask(task)">{{ task.name }}</a>
+            </span>
+        </div>
+    </div>
+    <div class="task-body" ng-show="isOpen">
+        <p class="text-info" ng-if="task.subtasks && task.subtasks.length == 0">This task has no subtasks.</p>
+        <ul class="task-list list-unstyled">
+            <li class="task" ng-repeat="task in task.subtasks" ng-class="{ 'task-done': task.state == 'completed' }"
+                ng-init="completed = task.state == 'completed'" ng-include="'task-list-task.html'">
+            </li>
+            <li class="more-tasks" ng-if="task._hasPartialSubtasks">
+                <a href ng-click="moreTasks(task)">More...</a>
+            </li>
+        </ul>
+        <button class="btn btn-success btn-sm" ng-click="newTask(task)" ng-if="task._permissions.update">New subtask</button>
+    </div>
+</script>
+
+<section class="content-panel">
+    <div class="panel-heading">
+        <div class="pull-left">
+            <h5>
+                <span class="fa fa-tasks"></span> Tasks assigned to
+                <span ng-if="filterUser && filterUser.id != $parent.currentUser.id">{{ filterUser.full_name }}</span>
+                <span ng-if="filterUser && filterUser.id == $parent.currentUser.id">me</span>
+                <span ng-if="filterTaskforce">{{ filterTaskforce.name }}</span>
+            </h5>
+        </div>
+        <br>
+    </div>
+    <div class="panel-body">
+        <div class="task-content">
+            <p class="text-info" ng-if="tasks.length == 0">
+                No tasks assigned.
+            </p>
+            <ul class="task-list list-unstyled">
+                <li class="task" ng-repeat="task in tasks" ng-class="{ 'task-done': task.state == 'completed' }"
+                    ng-init="completed = task.state == 'completed'" ng-include="'task-list-task.html'">
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

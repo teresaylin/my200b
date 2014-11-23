@@ -1,0 +1,91 @@
+<div class="row mt">
+    <div class="col-md-7 col-lg-5">
+        <calendar></calendar>
+    </div>
+
+    <div class="col-md-5 col-lg-4">
+        <task-list filter-user="currentUser"></task-list>
+        <button class="btn btn-success btn-sm" ng-click="newTask()">New task</button>
+    </div>
+
+    <div class="col-md-12 col-lg-3 ds">
+        <!--
+        <h3>Notifications</h3>
+                          
+        <div class="desc">
+          <div class="thumb">
+              <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+          </div>
+          <div class="details">
+              <p><small>2 Minutes Ago</small><br/>
+                 <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+              </p>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="thumb">
+              <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+          </div>
+          <div class="details">
+              <p><small>3 Hours Ago</small><br/>
+                 <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
+              </p>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="thumb">
+              <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+          </div>
+          <div class="details">
+              <p><small>7 Hours Ago</small><br/>
+                 <a href="#">Brandon Page</a> purchased a year subscription.<br/>
+              </p>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="thumb">
+            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+          </div>
+          <div class="details">
+            <p><small>11 Hours Ago</small><br/>
+                <a href="#">Mark Twain</a> commented your post.<br/>
+            </p>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="thumb">
+              <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+          </div>
+          <div class="details">
+              <p><small>18 Hours Ago</small><br/>
+                 <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
+              </p>
+          </div>
+        </div>
+        -->
+
+        <div ng-controller="TeamMembersListCtrl">
+            <h3>Team Members</h3>
+            <div class="desc" ng-repeat="user in users | filter:userFilter | orderBy:['-is_online', 'last_name']">
+                <div class="thumb">
+                    <img class="img-circle" height="40" user-picture="user" size="small">
+                </div>
+                <div class="details">
+                    <p>
+                        <a ui-sref="users.detail({ userId: user.id })">{{ user.full_name }}</a><br/>
+                        <span class="text-success" ng-if="user.is_online">
+                            <span class="fa fa-circle"></span>
+                            Online
+                        </span>
+                        <span class="text-muted" ng-if="!user.is_online">
+                            <span class="fa fa-circle-o"></span>
+                            Offline
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <a href ng-click="more()" ng-if="!showAll">More...</a>
+            <a href ng-click="less()" ng-if="showAll">Less...</a>
+        </div>
+    </div>
+</div>

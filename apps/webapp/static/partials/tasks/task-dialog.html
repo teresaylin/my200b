@@ -1,0 +1,116 @@
+<div class="modal-header">
+    <h3 class="modal-title" ng-if="!creating">{{ task.name }}</h3>
+    <h3 class="modal-title" ng-if="creating">New task</h3>
+</div>
+<div class="modal-body">
+    <form name="form" class="form-horizontal">
+        <fieldset>
+            <div>
+                <p ng-if="!editing">{{ task.name }}</p>
+                <input ng-if="editing" type="text" class="form-control" placeholder="Name" maxlength="50" required ng-model="task.name">
+            </div>
+            <div>
+                <pre ng-if="!editing && task.description">{{ task.description }}</pre>
+                <textarea ng-if="editing" class="form-control" placeholder="Description" ng-model="task.description"></textarea>
+            </div>
+        </fieldset>
+        <fieldset ng-if="task.due_time || editing">
+            <hr>
+            <div class="row">
+                <div class="col-xs-5">
+                    <span ng-if="!editing">{{ task.due_time|date:'fullDate' }}</span>
+                    <input ng-if="editing" type="text" class="form-control" placeholder="Due date" datepicker-popup ng-model="task.due_time" />
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-5">
+                    <span ng-if="!editing">{{ task.due_time|date:'shortTime' }}</span>
+                    <timepicker ng-if="editing" ng-model="task.due_time"></timepicker>
+                </div>
+            </div>
+            <button ng-if="editing" class="btn btn-sm btn-danger" ng-click="task.due_time = null" ng-disabled="!task.due_time">Remove due time</button>
+        </fieldset>
+    </form>
+    <tabset ng-if="!creating">
+        <hr>
+        <tab>
+            <tab-heading><span class="fa fa-paperclip"></span></tab-heading>
+            
+            <h4>Files</h4>
+            <div>
+                <form class="form-inline" ng-if="task._permissions.update">
+                    <file-picker file="newFile"></file-picker>
+                    <button class="btn btn-sm btn-primary"
+                        ng-click="addFile(newFile.path); newFile = null"
+                        ng-disabled="!newFile">
+                    Add</button>
+                </form> 
+
+                <p ng-if="task.files.length == 0">There are no files associated with this task.</p>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="file in task.files">
+                        <a href ng-click="removeFile(file)" ng-if="task._permissions.update">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        <a href title="{{ file }}" ng-click="openFile(file)">{{ file|basename }}</a>
+                    </li>
+                </ul>
+            </div>
+        </tab>
+        <tab>
+            <tab-heading><span class="fa fa-users"></span></tab-heading>
+
+            <h4>Assigned task forces</h4>
+            <div>
+                <form class="form-inline" ng-if="task._permissions.update">
+                    <taskforce-picker taskforce="newAssignedTaskforce"></taskforce-picker>
+                    <button class="btn btn-sm btn-primary"
+                        ng-click="addAssignedTaskforce(newAssignedTaskforce); newAssignedTaskforce = null"
+                        ng-disabled="!newAssignedTaskforce">
+                    Add</button>
+                </form> 
+
+                <p ng-if="task.assigned_taskforces.length == 0">There are no task forces assigned to this task.</p>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="taskforce in task.assigned_taskforces">
+                        <a href ng-click="removeAssignedTaskforce(taskforce)" ng-if="task._permissions.update">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        {{ taskforce.name }}
+                    </li>
+                </ul>
+            </div>
+
+            <h4>Assigned users</h4>
+            <div>
+                <form class="form-inline" ng-if="task._permissions.update">
+                    <user-picker user="newAssignedUser"></user-picker>
+                    <button class="btn btn-sm btn-primary"
+                        ng-click="addAssignedUser(newAssignedUser); newAssignedUser = null"
+                        ng-disabled="!newAssignedUser">
+                    Add</button>
+                </form> 
+
+                <p ng-if="task.assigned_users.length == 0">No-one is assigned to this task.</p>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="user in task.assigned_users">
+                        <a href ng-click="removeAssignedUser(user)" ng-if="task._permissions.update">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        <a ui-sref="users.detail({ userId: user.id })">{{ user.full_name }}</a>
+                    </li>
+                </ul>
+            </div>
+        </tab>
+        <tab>
+            <tab-heading><span class="fa fa-comments"></span></tab-heading>
+            <comments-section thread-id="task.comment_thread"></comments-section>
+        </tab>
+    </tabset>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="edit()" ng-if="task._permissions.update && !editing">Edit</button>
+    <button class="btn btn-danger" ng-click="delete()" ng-if="task._permissions.delete && editing && !creating">Delete</button>
+    <button class="btn btn-primary" ng-click="update(form)" ng-disabled="form.$invalid || !form.$dirty" ng-if="editing && !creating">Save</button>
+    <button class="btn btn-primary" ng-click="create(form)" ng-disabled="form.$invalid" ng-if="creating">Create</button>
+    <button class="btn btn-warning" ng-click="close()">Close</button>
+</div>

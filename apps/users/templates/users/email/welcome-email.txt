@@ -1,0 +1,11 @@
+{% autoescape off %}Welcome to your 2.009 Project Management site.
+
+An account has been created for you. Follow the link below to log in:
+{{ appUrl }}
+
+Your account information:
+Username: {{ user.username }}
+Password: {{ password }}
+
+Once you've logged in, you can change your password in the Settings page. 
+{% endautoescape %}

@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{ file.name }}</h3>
+</div>
+<div class="modal-body">
+    <div class="fileinfo">
+        <div class="row">
+            <div class="col-md-5 fileinfo-preview">
+                <figure ng-if="file.thumb_exists" class="text-center">
+                    <img file-thumbnail="file" size="l">
+                </figure>
+                <div ng-if="previewUrl">
+                    <a href="{{ previewUrl }}" target="_blank">Open preview...</a>
+                </div>
+                {{ previewAvailable }}
+            </div>
+            <div class="col-md-7">
+                {{ file.name }}<br>
+                {{ file.size }}<br>
+                Modified: {{ file.modified }}<br>
+                
+                <p>
+                    <a target="_blank" href="/api/files/download{{ file.path }}">Download...</a>
+                </p>
+            </div>
+        </div>
+        <div ng-if="file.app_data">
+            <comments-section thread-id="file.app_data.comment_thread"></comments-section>
+        </div>
+        <p ng-if="!file.app_data" class="alert alert-info">
+            This file is awaiting processing; comments will be unavailable until then. Please try again later.
+        </p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" ng-click="close()">Close</button>
+</div>

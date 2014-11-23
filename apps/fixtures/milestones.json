@@ -1,0 +1,74 @@
+[
+{
+  "model": "users.milestone",
+  "pk": 1,
+  "fields": {
+    "name": "3-Ideas Presentation",
+    "end_date": "2014-09-22"
+  }
+},
+
+{
+  "model": "users.milestone",
+  "pk": 2,
+  "fields": {
+    "name": "Sketch Model Review",
+    "end_date": "2014-10-02"
+  }
+},
+
+{
+  "model": "users.milestone",
+  "pk": 3,
+  "fields": {
+    "name": "Mockup Review",
+    "end_date": "2014-10-16"
+  }
+},
+
+{
+  "model": "users.milestone",
+  "pk": 4,
+  "fields": {
+    "name": "Assembly Review",
+    "end_date": "2014-10-31"
+  }
+},
+
+{
+  "model": "users.milestone",
+  "pk": 5,
+  "fields": {
+    "name": "Assembly Review",
+    "end_date": "2014-11-01"
+  }
+},
+
+{
+  "model": "users.milestone",
+  "pk": 6,
+  "fields": {
+    "name": "Technical Review",
+    "end_date": "2014-11-17"
+  }
+},
+
+{
+  "model": "users.milestone",
+  "pk": 7,
+  "fields": {
+    "name": "Final Presentations",
+    "end_date": "2014-12-08"
+  }
+},
+
+{
+  "model": "users.milestone",
+  "pk": 8,
+  "fields": {
+    "name": "Non Milestone",
+    "end_date": "2014-12-12"
+  }
+}
+
+]

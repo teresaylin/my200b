@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <h3 class="modal-title">Delete {{ files.length == 1 ? 'file' : 'files' }}</h3>
+</div>
+<div class="modal-body">
+    <p>Are you sure you want to delete <strong>{{ files.length == 1 ? files[0].name : files.length+' items' }}</strong>?</p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" ng-click="delete()">Delete</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

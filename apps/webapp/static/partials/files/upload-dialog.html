@@ -1,0 +1,40 @@
+<div nv-file-drop uploader="uploader">
+    <div class="modal-header">
+        <h3 class="modal-title">Upload to '{{ directory.name }}'</h3>
+    </div>
+    <div class="modal-body">
+
+        <ul class="list-group" ng-show="uploader.queue.length > 0">
+            <li class="list-group-item" ng-repeat="item in uploader.queue"
+                ng-class="{'list-group-item-success': item.isSuccess, 'list-group-item-info': item.isUploading,
+                    'list-group-item-danger': item.isError, 'disabled': item.isCancel}"
+            >
+                <strong>{{ item.file.name }}</strong>
+                <span class="text-muted" ng-show="uploader.isHTML5"> &ndash; {{ item.file.size|filesize }}</span>
+                <span class="pull-right">
+                    <span ng-show="item.isSuccess"><span class="glyphicon glyphicon-ok"></span></span>
+                    <span ng-show="item.isError"><span class="glyphicon glyphicon-remove"></span></span>
+
+                    <a href ng-click="item.isUploading ? item.cancel() : item.remove()" ng-show="!item.isUploaded">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </span>
+                <div ng-show="uploader.isHTML5">
+                    <progressbar ng-show="item.isUploading" class="progress-striped active" value="item.progress"></progressbar>
+                </div>
+            </li>
+        </ul>
+
+        <p>
+            Click the button below, or drag-and-drop files onto this dialog to upload them.
+        </p>
+        <file-input-container>
+            <input type="file" nv-file-select uploader="uploader" multiple>
+            <button class="btn btn-primary">Upload files</button>
+        </file-input-container>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="close()">Done</button>
+    </div>
+</div>

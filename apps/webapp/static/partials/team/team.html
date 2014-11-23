@@ -1,0 +1,81 @@
+<h1>{{ team.color }} team</h1>
+<hr>
+
+<h2>Members</h2>
+<div class="content-panel">
+    <div class="row users-gallery">
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6" ng-repeat="user in users">
+            <div class="user">
+                <figure class="user-photo user-photo-med">
+                    <a ui-sref="users.detail({ userId: user.id })">
+                        <img user-picture="user" size="med">
+                    </a>
+                    <figcaption>
+                        {{ user.full_name }}<br>
+                        <em ng-repeat="userRole in user.user_roles">{{ userRole.role.name }}<span ng-if="!$last">, </span></em>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Task forces</h2>
+<div class="content-panel">
+    <script type="text/ng-template" id="taskforce-accordion.html">
+        <accordion-group is-open="isOpen" ng-init="isOpen = false">
+            <accordion-heading>
+                <span ng-click="getTaskForceChildren(taskForce)">
+                    <span class="glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}"></span>
+                    {{ taskForce.name }}
+                </span>
+                <div class="pull-right">
+                    <button class="btn btn-primary btn-xs" ng-click="openEditTaskForceDialog(taskForce); $event.stopPropagation()">
+                        <span class="fa fa-pencil"></span>
+                    </button>
+                    <button class="btn btn-danger btn-xs" ng-click="openDeleteTaskForceDialog(taskForce); $event.stopPropagation()">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </accordion-heading>
+            <p>Milestone: {{ taskForce.milestone.name }} {{ taskForce.milestone.end_date }}</p>
+
+            <h3>Sub task forces</h3>
+            <accordion>
+                <div ng-repeat="taskForce in taskForce.children">
+                    <ng-include src="'taskforce-accordion.html'"></ng-include>
+                </div>
+            </accordion>
+            <button class="btn btn-sm btn-success" ng-click="openEditTaskForceDialog(null, taskForce)">New task force</button>
+            
+            <h3>Members</h3>
+            <form class="form-inline">
+                <user-picker user="newMember" restrict-team="team"></user-picker>
+                <button class="btn btn-sm btn-primary"
+                    ng-click="addTaskForceMember(taskForce, newMember); newMember = null"
+                    ng-disabled="!newMember">
+                Add</button>
+            </form> 
+
+            <p ng-if="!taskForce.members">This task force has no members.</p>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="user in taskForce.members">
+                    <a href ng-click="removeTaskForceMember(taskForce, user)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <a ui-sref="users.detail({ userId: user.id })">{{ user.full_name }}</a>
+                </li>
+            </ul>
+        </accordion-group>
+    </script>
+    
+    <div class="panel-body">
+        <accordion>
+            <p ng-if="taskForces.length == 0">This team doesn't have any task forces.</p>
+            <div ng-repeat="taskForce in taskForces">
+                <ng-include src="'taskforce-accordion.html'"></ng-include>
+            </div>
+        </accordion>
+        <button class="btn btn-sm btn-success" ng-click="openEditTaskForceDialog(null, null)">New task force</button>
+    </div>
+</div>

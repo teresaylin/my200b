@@ -1,0 +1,398 @@
+/*---------- Color definitions ----------*/
+
+$teamColors: (
+    red: #d32f2f,
+    green: #388e3c,
+    blue: #1976d2,
+    yellow: #f9ce1d,
+    pink: #e91e63,
+    orange: #ff5722,
+    purple: #9c27b0,
+    silver: #757575,
+    black: #212121
+);
+
+$teamAccentColors: (
+    red: #ff1744,
+    green: #4caf50,
+    blue: #03a9f4,
+    yellow: #ffeb3b,
+    pink: #ff4081,
+    orange: #ff9800,
+    purple: #d500f9,
+    silver: #9e9e9e,
+    black: #434343
+);
+
+/*---------- Header styling ----------*/
+
+@for $i from 1 to length($teamColors)+1 {
+    $name: nth(map-keys($teamColors), $i);
+    $col: nth(map-values($teamColors), $i);
+    $accentCol: nth(map-values($teamAccentColors), $i);
+
+    .header.team-#{$name} {
+        background-color: $col;
+        border-bottom: 1px solid darken($col, 5%);
+
+        ul.top-menu > li > .logout {
+            background-color: $accentCol;
+            border: 1px solid darken($accentCol, 5%);
+            &:hover {
+                background-color: lighten($accentCol, 5%);
+                border-color: $accentCol;
+                color: white;
+            }
+        }
+    }
+}
+
+.header {
+    color: white;
+    
+    a.dropdown-toggle {
+        color: #eee;
+        &:hover {
+            color: #ccc;
+        }
+    }
+    
+    a.logo {
+        margin-top: 0;
+        line-height: 60px;
+    }
+}
+
+/* Yellow team styling has black text */
+.header.team-yellow {
+    a.dropdown-toggle {
+        color: #212121;
+        &:hover {
+            color: #434343;
+        }
+    }
+
+    ul.top-menu > li > .logout {
+        color: #212121;
+        &:hover {
+            color: #212121;
+        }
+    }
+    
+    a.logo {
+        color: #212121;
+    }
+}
+
+.nav-filter {
+    float: left;
+    line-height: 60px;
+    font-size: 18px;
+    margin-left: 105px;
+}
+
+/*---------- Misc ----------*/
+
+.text-muted {
+    color: #ccc;
+}
+
+hr {
+    border-top-color: #ccc;
+}
+
+#main-content.nomargin {
+    margin-left: 0;
+}
+
+.content-panel.item-summary {
+    padding: 0;
+    
+    table {
+        th {
+            text-align: right;
+            white-space: nowrap;
+        }
+        td {
+            width: 100%;
+        }
+    }
+}
+
+.accordion-toggle {
+    cursor: pointer;
+}
+
+.lg-dialog {
+    > .modal-dialog {
+        width: 65%;
+    }
+}
+
+.error-dialog {
+    .modal-header {
+        background-color: red;
+    }
+    
+    iframe {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+.nav-tabs > li > a {
+    cursor: pointer;
+}
+
+.app-checkbox {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    font-size: 120%;
+    color: #333;
+    vertical-align: middle;
+    
+    &.disabled {
+        color: #bbb;
+        cursor: default;
+    }
+    
+    .app-checkbox-glyph-unchecked {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .app-checkbox-glyph-checked {
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+    }
+    
+    &:not(.disabled):hover {
+        color: #333;
+        .app-checkbox-glyph-unchecked {
+            visibility: hidden;
+        }
+        .app-checkbox-glyph-checked {
+            visibility: visible;
+        }
+    }
+}
+
+.dropdown-menu {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/*---------- Files ----------*/
+
+.filebrowser {
+    .filebrowser-header {
+        line-height: 30px;
+        
+        .dropbox-logo {
+            vertical-align: middle;
+            font-size: 120%;
+            color: #1081de;
+        }
+        
+        .filebrowser-search {
+            position: relative;
+            float: right;
+            width: 200px;
+            
+            > span {
+                position: absolute;
+                left: 8px;
+                font-size: 75%;
+            }
+            
+            input {
+                padding-left: 2em;
+            }
+        }
+        
+        .filebrowser-header-buttons {
+            padding-right: 4px;
+            font-size: 120%;
+            
+            a {
+                margin-right: 4px;
+                vertical-align: middle;
+            }
+        }
+    }
+    
+    .filebrowser-files {
+        margin: 26px 26px 0 26px;
+        
+        table {
+            width: 100%;
+
+            > thead > tr > th {
+                line-height: 29px;
+                color: #aaa;
+            }
+            
+            > tbody > tr {
+                border-top: 1px solid #e5e5e5;
+                white-space: nowrap;
+                
+                &:first-child > td {
+                    width: 100%;
+                }
+
+                > td {
+                    padding: 6px 0;
+                    line-height: 32px;
+                }
+            }
+            
+            .filebrowser-file {
+                &.selected {
+                    background-color: #e3f2ff;
+                    &:hover {
+                        background-color: #e3f2ff;
+                    }
+                }
+                
+                &.pending {
+                    /*background-color: #ddd;*/
+                    td {
+                        font-style: italic;
+                        color: #aaa;
+                        a {
+                            color: #aaa;
+                        }
+                    }
+                }
+
+                &:hover {
+                    background-color: #f5fafe;
+                }
+
+                a {
+                    color: #3d464d;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .filebrowser-file-icon {
+                    margin-right: 11px;
+                }
+            }
+        }
+    }
+}
+
+.fileinfo {
+    .fileinfo-preview {
+        > figure > img {
+            max-width: 100%;
+        }
+    }
+}
+
+/*---------- Users ----------*/
+
+.user-photo {
+    text-align: center;
+
+    img {
+        border: 1px solid #ccc;
+    }
+    
+    &.user-photo-med img {
+        width: 104px + 2px;
+        height: 138px + 2px;
+    }
+    
+    &.user-photo-small img {
+        width: 52px + 2px;
+        height: 69px + 2px;
+    }
+}
+
+.users-gallery {
+    .user {
+        margin-bottom: 20px;
+        min-height: 196px;
+
+        > figure {
+            margin: 0 auto;
+        }
+    }
+}
+
+/*---------- Comments ----------*/
+
+.comment {
+    margin-bottom: 24px;
+    
+    figure {
+        float: left;
+        margin-right: 12px;
+    }
+    
+    .body {
+        overflow: hidden;
+        white-space: pre-wrap;
+    }
+}
+
+/*---------- Calendar ----------*/
+
+.fc-event {
+    cursor: pointer;
+}
+
+/*---------- Tasks ----------*/
+
+.task-list {
+    .task {
+        border-bottom: 1px dashed #eaeaea;
+        
+        .task-header {
+            padding: 4px 0;
+
+            .task-header-left {
+                width: 60%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+
+                .task-header-checkbox {
+                    display: inline-block;
+                    width: 16px;
+                }
+            }
+            .task-header-right {
+                text-align: right;
+                width: 40%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            
+            &:hover {
+                background-color: #f7f7f7;
+                ~ .task-body {
+                    background-color: #f7f7f7;
+                }
+            }
+        }
+        
+        .task-body {
+            border-left: 1px solid #eaeaea;
+            margin: 4px 0 4px 16px;
+            padding: 6px 4px;
+        }
+    }
+    
+    .more-tasks {
+        padding: 3px 16px;
+    }
+}

@@ -1,0 +1,57 @@
+<h1>{{ user.full_name }}</h1>
+<hr>
+
+<figure class="user-photo user-photo-med">
+    <img user-picture="user" size="med">
+    <figcaption>
+        {{ user.full_name }}<br>
+        <em ng-repeat="userRole in user.user_roles">{{ userRole.role.name }}<span ng-if="!$last">, </span></em>
+    </figcaption>
+</figure>
+
+<h2>Profile
+    <a href ng-click="openEditProfileDialog()" ng-if="user.id == currentUser.id">
+        <sup><span class="fa fa-pencil"></span></sup>
+    </a>
+</h2>
+<div class="content-panel item-summary">
+    <table class="table"><tbody>
+        <tr>
+            <th>Username</th>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <th>Phone number</th>
+            <td>{{ user.profile.phone_number }}</td>
+        </tr>
+        <tr>
+            <th>Car</th>
+            <td>{{ user.profile.car }}</td>
+        </tr>
+    </tbody></table>
+</div>
+
+<div ng-if="user.id == currentUser.id">
+    <h2>Roles</h2>
+    <div class="content-panel">
+        <div class="panel-body">
+            <form class="form-inline">
+                <select class="form-control" ng-model="newRole" ng-options="role.name for role in roles">
+                    <option value="">---</option>
+                </select>
+                <button class="btn btn-sm btn-primary" ng-click="addRole(newRole); newRole = null" ng-disabled="!newRole">Add role</button>
+            </form>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="userRole in user.user_roles">
+                    <a href ng-click="removeRole(userRole)" ng-if="userRole.role.user_assignable">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <span ng-if="!userRole.role.user_assignable">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </span>
+                    {{ userRole.role.name }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

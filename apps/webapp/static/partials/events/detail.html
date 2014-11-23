@@ -1,0 +1,57 @@
+<h1>{{ event.title }}</h1>
+<div class="content-panel item-summary">
+    <table class="table"><tbody>
+        <tr>
+            <th>Owner</th>
+            <td>
+                <a ui-sref="users.detail({ userId: event.owner.id })">{{ event.owner.full_name }}</a>
+            </td>
+        </tr>
+        <tr>
+            <th>Starts</th>
+            <td>{{ event.start|date:'medium' }}</td>
+        </tr>
+        <tr>
+            <th>Ends</td>
+            <td>{{ event.end|date:'medium' }}</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>{{ event.location }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <pre>{{ event.description }}</pre>
+            </td>
+        </tr>
+        <tr>
+            <th>Attendees</th>
+            <td>
+                <form class="form-inline">
+                    <user-picker user="newAttendeeUser"></user-picker>
+                    <button class="btn btn-sm btn-primary"
+                        ng-click="addAttendee(newAttendeeUser); newAttendeeUser = null"
+                        ng-disabled="!newAttendeeUser">
+                    Add</button>
+                </form> 
+                
+                <p ng-if="event.attendees.length == 0">No-one is attending this event.</p>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="user in event.attendees">
+                        <a href ng-click="removeAttendee(user)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        <a ui-sref="users.detail({ userId: user.id })">{{ user.full_name }}</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Comments</th>
+            <td>
+                <comments-section thread-id="event.comment_thread"></comments-section>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
